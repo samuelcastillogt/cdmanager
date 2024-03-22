@@ -5,23 +5,22 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import { ICard } from '../interfaces/Icard.interface';
 import Card from "../components/Card"
+import { categoria as categorie } from '../services/categorias';
 interface Iprops{
   data?: Array<ICard> 
 }
-////
-const categoria: Array<string> = [
-  "Transporte",
- "Musicos",
- "Restaurante",
- "Delivery",
- "Servicios",
- "Mercado", 
- 
-]
-//////
+
 function Home(props: Iprops) {
   const [age, setAge] = React.useState<string>('Todos');
   const [filtrada, setFiltrada] = React.useState<Array<ICard>>()
+  const [categoria, setCategoria] = React.useState([])
+  const getCategoria = async()=>{
+      const data = await categorie()
+      setCategoria(data)
+  }
+  React.useEffect(()=>{
+      getCategoria()
+  },[])
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value as string)
     if(event.target.value == "Todos"){
@@ -31,6 +30,7 @@ function Home(props: Iprops) {
       setFiltrada(dataFiltered)
     }
   };
+
   return (
     <div className='home'>
       <div className='sideBar'>

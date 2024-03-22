@@ -1,0 +1,69 @@
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import { login, getToken, checkToken } from '../services/auth.service';
+
+export default function Login(props) {
+    const [nombre, setNombre] = React.useState<string | undefined>() 
+    const [email, setEmail] = React.useState<string | undefined>()
+    const  checkTokenFromLocal= async()=>{
+        const tokenLocal = await getToken()
+        if(tokenLocal != null){
+               props.setToken(tokenLocal)
+            props.setValue(0)             
+        }else{
+
+        }
+      }
+    React.useEffect(()=>{
+        checkTokenFromLocal()
+    },[])
+
+    const loginRest = async()=>{
+        const data = {
+             nombre, pass:email
+        }
+        console.log(data)
+        const response = await login(data)
+        if(response != "Error"){
+            window.localStorage.setItem("token_CD_manager", response)
+            checkTokenFromLocal()
+        }else{
+            alert("Contraseña Equivocada")
+        }
+
+    }
+  return (
+    <Box
+      component="form"
+      sx={{
+        '& .MuiTextField-root': { m: 1, width: '25ch' },
+      }}
+      autoComplete="off"
+      className='form'
+      style={{display: "flex", flexDirection: "column"}}
+    >
+      <div>
+        <TextField
+          id="filled-textarea"
+          label="Nombre de Usuario"
+          variant="filled"
+          onChange={(e: React.ChangeEvent<HTMLInputElement>)=> setNombre(e.target.value)}
+        />
+                <TextField
+          id="filled-textarea"
+          label="Contraseña"
+          variant="filled"
+          type="password"
+          onChange={(e: React.ChangeEvent<HTMLInputElement>)=> setEmail(e.target.value)}
+        />
+       
+    
+      </div>
+      <div className='botonera'>
+          <Button size="small" variant="contained" onClick={loginRest} color="success" disabled={nombre == undefined ||  email == undefined }>Login</Button>        
+      </div>
+    </Box>
+  );
+}

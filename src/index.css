@@ -76,6 +76,31 @@ button:focus-visible {
   display: flex;
   justify-content: space-around;
 }
+.page{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100vw;
+  justify-content: space-around;
+}
+.left{
+  width: 40%;
+}
+.left ul{
+  list-style: none;
+
+}
+.left li{
+  padding: 10px;
+}
+.rigth{
+  width: 60%;
+}
+.header{
+  padding: 10px;
+  border-bottom: 1px solid whitesmoke;
+  display: flex;
+  justify-content: flex-end;
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
