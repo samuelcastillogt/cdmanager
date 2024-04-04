@@ -7,6 +7,7 @@ import StorefrontIcon from '@mui/icons-material/Storefront';
 import ForumIcon from '@mui/icons-material/Forum';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import "../index.css"
 const oferta = [
     {
         titulo: "Tu perfil visible a todos los vecinos",
@@ -46,8 +47,8 @@ const roadMap = [
 function Registro() {
   return (
     <>
-    <div style={{width: "100vw", backgroundColor: "#363062", height: "300px", display: "flex", flexDirection: "column", justifyContent: "center",  padding: "20px"}}>
-        <p style={{fontWeight: "bold", fontSize: "30px"}}>Anunciate aqui y llega a cientos de potenciales clientes</p>
+    <div style={{width: "100vw", backgroundColor: "#363062", height: "300px", display: "flex", flexDirection: "column", justifyContent: "center",  padding: "20px", color: "white"}}>
+        <p style={{fontWeight: "bold", fontSize: "30px", color: "white"}}>Anunciate aqui y llega a cientos de potenciales clientes</p>
     </div>
     <div className="p-5">
         <h2 style={{padding: "10px"}}>Las personas ya buscan lo que ofreces, deja que te encuentren...</h2>
