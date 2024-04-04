@@ -46,8 +46,8 @@ const roadMap = [
 ]
 function Registro() {
   return (
-    <>
-    <div style={{width: "100vw", backgroundColor: "#363062", height: "300px", display: "flex", flexDirection: "column", justifyContent: "center",  padding: "20px", color: "white"}}>
+    <div style={{width: "100%"}}>
+    <div style={{width: "100%", backgroundColor: "#363062", height: "300px", display: "flex", flexDirection: "column", justifyContent: "center",  padding: "20px", color: "white"}}>
         <p style={{fontWeight: "bold", fontSize: "30px", color: "white"}}>Anunciate aqui y llega a cientos de potenciales clientes</p>
     </div>
     <div className="p-5">
@@ -88,7 +88,7 @@ roadMap.map(item => <div style={{width: "150px", height: "200px", border: "1px s
             </div>
         </div>
     </div>    
-    </>
+    </div>
 
   )
 }
