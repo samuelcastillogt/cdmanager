@@ -66,7 +66,7 @@ export default function CardBusiness(props: Iprops | undefined) {
   }
   return (
     <>
-      <Card sx={{ maxWidth: 345 }} style={{margin: "20px"}}>
+      <Card sx={{ maxWidth: 345 }} style={{margin: "20px", backgroundColor: "#FBFADA", color: "#436850"}}>
       <CardMedia
         sx={{ height: 140 }}
         image={props?.data?.data.imagen}
@@ -76,7 +76,7 @@ export default function CardBusiness(props: Iprops | undefined) {
         <Typography gutterBottom variant="h5" component="div">
           {props?.data?.data.nombre}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="#436850">
             {props?.data?.data.descripcion}
         </Typography>
       </CardContent>

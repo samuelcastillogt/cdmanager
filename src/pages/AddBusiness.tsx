@@ -57,7 +57,7 @@ export default function AddBusiness() {
       }}
       autoComplete="off"
       className='form'
-      style={{display: "flex", flexDirection: "column"}}
+      style={{display: "flex", flexDirection: "column", backgroundColor: "#436850"}}
     >
       <div>
         <TextField
@@ -109,7 +109,7 @@ export default function AddBusiness() {
       </div>
       <div className='botonera'>
       <Button size="small" variant="contained" color="error" onClick={resetForm}>Cancelar</Button>
-          <Button size="small" variant="contained" onClick={create} color="success" disabled={nombre == undefined || descripcion == undefined || image == undefined || categorie == undefined || email == undefined || direccion == undefined}>Editar</Button>        
+          <Button size="small" variant="contained" onClick={create} color="success" disabled={nombre == undefined || descripcion == undefined || image == undefined || categorie == undefined || email == undefined || direccion == undefined}>Registrar</Button>        
       </div>
     </Box>
   );

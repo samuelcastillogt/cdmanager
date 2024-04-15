@@ -7,7 +7,7 @@ function Header() {
       }
   return (
     <div className='header'>
-        <Button title="Salir" onClick={salir} variant="contained">Salir</Button>
+        <Button title="Salir" onClick={salir} variant="contained" style={{backgroundColor: "#436850"}}>Salir</Button>
     </div>
   )
 }

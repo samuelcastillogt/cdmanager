@@ -16,13 +16,14 @@ export default function SimpleBottomNavigation(props: Iprops) {
     <Box sx={{ width: "100%", margin: "10px" }}>
       <BottomNavigation
         showLabels
+        
         value={props.value}
         onChange={(event, newValue) => {
-            console.log(newValue)
           props.setValue(newValue);
         }}
+        style={{backgroundColor: "#436850"}}
       >
-        <BottomNavigationAction label="Negocios" icon={<BusinessIcon />} />
+        <BottomNavigationAction  label="Negocios" icon={<BusinessIcon />} />
         <BottomNavigationAction label="Registrar negocio" icon={<AddBusinessIcon />} />
         <BottomNavigationAction label="Utilerias" icon={<ConstructionIcon />} />
       </BottomNavigation>
