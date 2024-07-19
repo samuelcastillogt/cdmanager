@@ -47,12 +47,11 @@ export default function CardBusiness(props: Iprops | undefined) {
 
     }
     const response = await editBusiness(info)
-    console.log(response)
     if(response == true){
       alert("Se Actualizo se forma correcta")
       handleClose()
     }else{
-      alert("Ocurrio un error, intentelo mas tarde")
+      console.log("Ocurrio un error, intentelo mas tarde")
     }
   }
   const deleteDoc = async()=>{

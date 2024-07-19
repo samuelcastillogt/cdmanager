@@ -1,5 +1,8 @@
 import axios from "axios"
+import * as Redux from "react-redux"
 import { ICard } from "../interfaces/Icard.interface"
+import { store } from "../redux/store"
+import { OPEN_MODAL } from "../redux/slices/modal.slice"
 const URL = window.location.hostname == "localhost" ? "http://localhost:4000/" :"https://cdserver-r54a.vercel.app/"
 export const getAllBusiness = async()=>{
     const {data} = await axios.get(URL)
@@ -15,7 +18,11 @@ export const editBusiness = async(data: ICard | undefined): Promise<any>=>{
      const response = await axios.post(URL + "edit/" + data?.id, {data}, {headers: headers})
     return response.data       
     }catch(err){
-        alert("Error de autenticacion de usuario")
+        const msg = {
+            text: "Error de autenticacion de usuario",
+            action: "reload"
+        }
+        store.dispatch(OPEN_MODAL(msg))
     }
 
 }

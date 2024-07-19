@@ -6,6 +6,8 @@ export interface Iuser{
 }
 export const getToken:any = async():Promise<string>=>{
     const token  = window.localStorage.getItem("token_CD_manager")
+    const validateToken = await checkToken(token)
+    console.log(validateToken.data)
     return token
 }
 export const login = async(user:Iuser)=>{
@@ -14,7 +16,12 @@ export const login = async(user:Iuser)=>{
     return token
 }
 export const checkToken = async(token: string)=>{
-    const response = await axios.post(URL + "check", {token},{headers: {token}})
-    const status = response.data
-    return status
+    try{
+        const response = await axios.post(URL + "check", {token},{headers: {token}})
+        const status = response.data
+        return status
+    }catch(err){
+        console.log(err)
+    }
+
 }

@@ -24,7 +24,6 @@ export default function Login(props) {
         const data = {
              nombre, pass:email
         }
-        console.log(data)
         const response = await login(data)
         if(response != "Error"){
             window.localStorage.setItem("token_CD_manager", response)
@@ -45,25 +44,31 @@ export default function Login(props) {
       style={{display: "flex", flexDirection: "column"}}
     >
       <div>
+        <img src="./icon2.png" alt="" style={{width: "200px"}}/>
+        <div>
         <TextField
           id="filled-textarea"
           label="Nombre de Usuario"
           variant="filled"
           onChange={(e: React.ChangeEvent<HTMLInputElement>)=> setNombre(e.target.value)}
+          style={{background: "white"}}
         />
-                <TextField
+        <TextField
           id="filled-textarea"
           label="Contraseña"
           variant="filled"
           type="password"
           onChange={(e: React.ChangeEvent<HTMLInputElement>)=> setEmail(e.target.value)}
+          style={{background: "white"}}
         />
        
     
       </div>
       <div className='botonera'>
-          <Button size="small" variant="contained" onClick={loginRest} color="success" disabled={nombre == undefined ||  email == undefined }>Login</Button>        
-      </div>
+          <Button size="small" variant="contained" onClick={loginRest} color="success" disabled={nombre == undefined ||  email == undefined }>Iniciar Sesion</Button>        
+      </div>          
+        </div>
+
     </Box>
   );
 }

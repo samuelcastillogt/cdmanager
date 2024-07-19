@@ -3,5 +3,5 @@ const URL = window.location.hostname == "localhost" ? "http://localhost:4000/" :
 
 export const categoria= async()=>{
     const response = await axios.get(URL+ "categories")
-    return response.data.data.categorias
+    return response.data
 }

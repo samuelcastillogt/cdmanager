@@ -20,7 +20,6 @@ const getData = async()=>{
 
 useEffect(()=>{
   getData()
-  
 }, [])
   return (
     
