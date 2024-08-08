@@ -52,5 +52,12 @@ export const deleteBusiness = async(id:string | undefined): Promise<any>=>{
        }catch(err){
            alert("Error de autenticacion de usuario")
        }
-
+}
+export const sendDataToInfo = async(data)=>{
+        try{
+            const response = await axios.post(URL + "v1/business/dataToInfo", {data})
+            return response.data
+        }catch(err){
+            console.log(err)
+        }
 }
